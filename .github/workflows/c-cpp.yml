@@ -24,7 +24,7 @@ jobs:
 
       - name: Compile and test
         run: |
-          gcc -o paygo examples/device_payg_logic.c examples/main.c examples/unix_device/device_functions.c examples/unix_device/getch.c src/opaygo_core.c src/opaygo_decoder.c src/opaygo_value_utils.c src/restricted_digit_set_mode.c src/siphash.c src/extended/opaygo_core_extended.c src/extended/opaygo_decoder_extended.c include/extended/opaygo_decoder_extended.h include/extended/opaygo_core.h include/extended/opaygo_core_extended.h include/opaygo_decoder.h include/opaygo_value_utils.h include/restricted_digit_set_mode.h include/siphash.h -lm -o opaygo.bin
+          gcc -o paygo test/device_payg_logic.c test/main.c test/unix_device/device_functions.c test/unix_device/getch.c src/opaygo_core.c src/opaygo_decoder.c src/opaygo_value_utils.c src/restricted_digit_set_mode.c src/siphash.c src/extended/opaygo_core_extended.c src/extended/opaygo_decoder_extended.c include/extended/opaygo_decoder_extended.h include/extended/opaygo_core.h include/extended/opaygo_core_extended.h include/opaygo_decoder.h include/opaygo_value_utils.h include/restricted_digit_set_mode.h include/siphash.h -lm -o opaygo.bin
 
       - name: Fail fast if Compile Test fails
         if: ${{ job.status == 'failure' }}
