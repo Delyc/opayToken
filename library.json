@@ -1,0 +1,26 @@
+{
+  "name": "Open PayGo token",
+  "version": "1.0.0",
+  "description": "open pay go token",
+  "keywords": "payment, token",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Delyc/openPayGoToken.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Delyce Twizeyimana",
+      "email": "delyce35@gmail.com",
+      "url": "https://github.com/Delyc",
+      "maintainer": true
+    }
+ 
+  ],
+  "license": "MIT",
+  "dependencies": {
+  },
+  "frameworks": "*",
+  "platforms": "*"
+}
