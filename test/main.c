@@ -11,7 +11,7 @@ uint64_t WaitForTokenEntry() {
   uint64_t TempToken = 0;
   bool NoToken = true;
   int LastKey;
-  int TOKEN_LENGTH;
+  // int TOKEN_LENGTH;
 
   while (NoToken) {
     LastKey = GetKeyPressed();
