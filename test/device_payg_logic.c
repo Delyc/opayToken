@@ -8,16 +8,16 @@ void UpdateDeviceStatusFromTokenValue(int TokenValue, int ActivationCount) {
     UpdateInvalidTokenWaitingPeriod();
     BlinkRedLED(10);
   } else if (TokenValue == -2) {
-    BlinkGreenLED(1);  // We blink the green LED once to show that the token was
-                       // valid but isnt anymore
+    BlinkGreenLED(1); // We blink the green LED once to show that the token was
+                      // valid but isnt anymore
   } else {
     InvalidTokenCount = 0;
     if (TokenValue == COUNTER_SYNC_VALUE) {
-      BlinkGreenLED(3);  // We blink green twice to show that the token is good
+      BlinkGreenLED(3); // We blink green twice to show that the token is good
     } else if (TokenValue == PAYG_DISABLE_VALUE) {
       PAYGEnabled = false;
       BlinkGreenLED(
-          5);  // We blink green twice to show that the device is active forever
+          5); // We blink green twice to show that the device is active forever
     } else {
       if (ActivationCount % 2) {
         PAYGEnabled = true;
@@ -25,9 +25,9 @@ void UpdateDeviceStatusFromTokenValue(int TokenValue, int ActivationCount) {
       } else {
         AddTime(TokenValue);
       }
-      BlinkGreenLED(2);  // We blink green twice to show that the token is good
+      BlinkGreenLED(2); // We blink green twice to show that the token is good
     }
-    StoreActivationVariables();  // We store in every case
+    StoreActivationVariables(); // We store in every case
   }
 }
 
@@ -62,8 +62,8 @@ void AddTime(int ActivationValue) {
   }
 
   ActiveUntil +=
-      NumberOfSecondsToActivate;  // We add the number of days (converted in
-                                  // seconds for to compare to our RTC time)
+      NumberOfSecondsToActivate; // We add the number of days (converted in
+                                 // seconds for to compare to our RTC time)
 }
 
 void SetTime(int ActivationValue) {
@@ -72,8 +72,8 @@ void SetTime(int ActivationValue) {
 
   ActiveUntil =
       Now +
-      NumberOfSecondsToActivate;  // We set the number of days (converted in
-                                  // seconds for to compare to our RTC time)
+      NumberOfSecondsToActivate; // We set the number of days (converted in
+                                 // seconds for to compare to our RTC time)
 }
 
 bool IsActive() {

@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 #if (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
-#  include <sys/types.h>
+#include <sys/types.h>
 #endif
 
 int DecodeBase(int StartingCodeBase, int TokenBase);

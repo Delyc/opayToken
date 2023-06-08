@@ -52,9 +52,7 @@ uint32_t DecodeBaseExtended(uint32_t StartingCodeBase, uint32_t TokenBase) {
   }
 }
 
-uint32_t GetTokenBaseExtended(uint64_t Token) {
-  return (Token % 1000000);
-}
+uint32_t GetTokenBaseExtended(uint64_t Token) { return (Token % 1000000); }
 
 uint64_t PutBaseInTokenExtended(uint64_t Token, uint32_t TokenBase) {
   return Token - (Token % 1000000) + TokenBase;

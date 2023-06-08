@@ -1,6 +1,6 @@
 #include "../include/restricted_digit_set_mode.h"
 
-void StoreNBitsInArray(bool* BooleanArray, uint64_t Data, uint8_t NumberOfBits,
+void StoreNBitsInArray(bool *BooleanArray, uint64_t Data, uint8_t NumberOfBits,
                        uint8_t BufferStartBit) {
   for (int i = 0; i < NumberOfBits; i++) {
     BooleanArray[i + BufferStartBit] =
@@ -9,7 +9,7 @@ void StoreNBitsInArray(bool* BooleanArray, uint64_t Data, uint8_t NumberOfBits,
   }
 }
 
-uint32_t GetINTFromBooleanArray(bool* BooleanArray, uint8_t StartPosition,
+uint32_t GetINTFromBooleanArray(bool *BooleanArray, uint8_t StartPosition,
                                 uint8_t Lenght) {
   uint32_t Buffer = 0;
   for (int i = StartPosition; i < StartPosition + Lenght; i++) {

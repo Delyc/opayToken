@@ -10,16 +10,16 @@
 #define opaygo_decoder_extended_h
 
 #if (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
-#  include <sys/types.h>
+#include <sys/types.h>
 #endif
 
-#include <stdint.h>
-#include <stdio.h>
 #include "../../include/opaygo_decoder.h"
 #include "opaygo_core_extended.h"
+#include <stdint.h>
+#include <stdio.h>
 
 int32_t GetActivationValueFromExtendedToken(uint64_t InputToken,
-                                            uint16_t* MaxCount,
+                                            uint16_t *MaxCount,
                                             uint32_t StartingCode,
                                             char SECRET_KEY[16]);
 

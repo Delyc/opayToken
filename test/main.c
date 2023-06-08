@@ -1,11 +1,11 @@
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
 #include "../include/opaygo_decoder.h"
 #include "../include/opaygo_value_utils.h"
 #include "device_parameters.h"
 #include "device_payg_logic.h"
 #include "unix_device/device_functions.h"
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 uint64_t WaitForTokenEntry() {
   uint64_t TempToken = 0;
@@ -44,7 +44,7 @@ uint64_t WaitForTokenEntry() {
 }
 
 // Main PAYG loop
-int main(int argc, const char* argv[]) {
+int main(int argc, const char *argv[]) {
 #ifdef DEBUG
   printf("Welcome to the OPAYGO Device Simulator\n");
   printf(
@@ -53,7 +53,7 @@ int main(int argc, const char* argv[]) {
       "work)\n(Press the '#' key to see the device activation status)\n\n");
 #endif
 
-  LoadActivationVariables();  // We load the activation variables
+  LoadActivationVariables(); // We load the activation variables
 
   uint64_t InputToken;
   TokenData Output;
@@ -67,10 +67,10 @@ int main(int argc, const char* argv[]) {
 #ifdef DEBUG
     printf("\n(Token entered: %llu)", InputToken);
     printf("\n(Activation Value from Token: %d)",
-           Output.Value);  // Activation Value found in the token
-    printf("\n(Count: %d)", Output.Count);        // Count found in the token
-    printf("\n(Max Count: %d)", TokenCount);      // Count found in the token
-    printf("\n(Used Tokens: %d)\n", UsedTokens);  // Count found in the token
+           Output.Value); // Activation Value found in the token
+    printf("\n(Count: %d)", Output.Count);       // Count found in the token
+    printf("\n(Max Count: %d)", TokenCount);     // Count found in the token
+    printf("\n(Used Tokens: %d)\n", UsedTokens); // Count found in the token
 #endif
 
     // We update the PAYG mode (ON or OFF) and the PAYG timer based on the

@@ -8,9 +8,7 @@ int DecodeBase(int StartingCodeBase, int TokenBase) {
   }
 }
 
-int GetTokenBase(uint32_t Token) {
-  return (Token % 1000);
-}
+int GetTokenBase(uint32_t Token) { return (Token % 1000); }
 
 uint32_t PutBaseInToken(uint32_t Token, int TokenBase) {
   return Token - (Token % 1000) + TokenBase;

@@ -30,17 +30,17 @@ void BlinkGreenLED(int NumberOfBlinks) {
 int GetKeyPressed() {
   char this_char = getch();
   switch (this_char) {
-    case '*':
-      return STAR_KEY;
-      break;
+  case '*':
+    return STAR_KEY;
+    break;
 
-    case '#':
-      return HASH_KEY;
-      break;
+  case '#':
+    return HASH_KEY;
+    break;
 
-    default:
-      return (int)(this_char - '0');  // this_char is now an int
-      break;
+  default:
+    return (int)(this_char - '0'); // this_char is now an int
+    break;
   }
 }
 
@@ -58,6 +58,4 @@ void StoreActivationVariables() {
   // We store TokenEntryLockedUntil
 }
 
-uint32_t GetTimeInSeconds() {
-  return (uint32_t)time(NULL);
-}
+uint32_t GetTimeInSeconds() { return (uint32_t)time(NULL); }

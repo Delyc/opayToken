@@ -2,7 +2,7 @@
 #include "../include/opaygo_value_utils.h"
 
 #define CHECK_BIT(variable, position) ((variable) & (1 << (position)))
-#define SET_BIT(variable, position, value) \
+#define SET_BIT(variable, position, value)                                     \
   (variable & ~(1 << position)) | (value << position)
 
 bool IsInUsedCounts(int Count, uint16_t MaxCount, uint16_t UsedCounts) {
@@ -38,7 +38,7 @@ bool IsCountValid(int Count, uint16_t MaxCount, int Value,
   return false;
 }
 
-void MarkCountAsUsed(int Count, uint16_t* MaxCount, uint16_t* UsedCounts,
+void MarkCountAsUsed(int Count, uint16_t *MaxCount, uint16_t *UsedCounts,
                      int Value) {
   uint16_t NewUsedCount = 0;
   if (Count % 2 || Value == COUNTER_SYNC_VALUE || Value == PAYG_DISABLE_VALUE) {
@@ -75,8 +75,8 @@ void MarkCountAsUsed(int Count, uint16_t* MaxCount, uint16_t* UsedCounts,
   }
 }
 
-TokenData GetDataFromToken(uint64_t InputToken, uint16_t* MaxCount,
-                           uint16_t* UsedCounts, uint32_t StartingCode,
+TokenData GetDataFromToken(uint64_t InputToken, uint16_t *MaxCount,
+                           uint16_t *UsedCounts, uint32_t StartingCode,
                            unsigned char SECRET_KEY[16]) {
 #ifdef RESTRICTED_DIGIT_SET_MODE
   InputToken = ConvertFromFourDigitToken(InputToken);
