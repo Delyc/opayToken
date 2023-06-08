@@ -1,4 +1,4 @@
-[![C/C++ CI/CD](https://github.com/Delyc/openPayGoToken/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Delyc/openPayGoToken/actions/workflows/c-cpp.yml)
+[![C/C++ CI/CD](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml)
 
 <p align="center">
   <a href="https://github.com/EnAccess/OpenPAYGO-HW">
