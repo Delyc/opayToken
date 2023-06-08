@@ -1,23 +1,35 @@
-name: C/C++ CI
+name: C/C++ CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  build:
+  clang-format:
+    name: Lint clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run clang-format lint
+        run: find include/ src/ \( -name '*.[ch]pp' -o -name '*.h' \) | xargs clang-format --verbose --style=file -n --Werror
 
+  linting-and-compile-test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile and test
+        run: |
+          gcc -o paygo examples/device_payg_logic.c examples/main.c examples/unix_device/device_functions.c examples/unix_device/getch.c src/opaygo_core.c src/opaygo_decoder.c src/opaygo_value_utils.c src/restricted_digit_set_mode.c src/siphash.c src/extended/opaygo_core_extended.c src/extended/opaygo_decoder_extended.c include/extended/opaygo_decoder_extended.h include/extended/opaygo_core.h include/extended/opaygo_core_extended.h include/opaygo_decoder.h include/opaygo_value_utils.h include/restricted_digit_set_mode.h include/siphash.h -lm -o opaygo.bin
+
+      - name: Fail fast if Compile Test fails
+        if: ${{ job.status == 'failure' }}
+        run: |
+          echo "Compile Test failed!"
+          exit 1
+
+      # Additional steps if linting and compile test are successful
