@@ -6,24 +6,21 @@ on:
       - created
 
 jobs:
-  send_notification:
+  check-release:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Check for new release
-        id: check_release
-        run: |
-          # Add any necessary script or command to check for new releases
-          latest_release=$(git describe --tags --abbrev=0)
-          echo "::set-output name=release::$latest_release"
-
-      - name: Send email notification
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+      - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.example.com
           server_port: 587
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: New release available
-          body: there is a new release available ${{ steps.check_release.outputs.release }}
-          to: delyce@enaccess.org
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New release detected: ${{ github.event.release.tag_name }}"
+          body: "A new release has been created on GitHub. Please check the repository for more details."
+          to: "delyce@enaccess.com"
+          from: "delyce35@gmail.com"
