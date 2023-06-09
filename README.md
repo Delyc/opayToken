@@ -1,6 +1,4 @@
-[![C/C++ CI/CD](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml)
-
-[![Release Notification](https://github.com/Delyc/opayToken/actions/workflows/release.yml/badge.svg)](https://github.com/Delyc/opayToken/actions/workflows/release.yml)
+[![C/C++ CI/CD](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Delyc/opayToken/actions/workflows/c-cpp.yml)  &nbsp; [![Release Notification](https://github.com/Delyc/opayToken/actions/workflows/release.yml/badge.svg)](https://github.com/Delyc/opayToken/actions/workflows/release.yml)
 
 <p align="center">
   <a href="https://github.com/EnAccess/OpenPAYGO-HW">
