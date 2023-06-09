@@ -22,5 +22,5 @@ jobs:
           password: ${{ secrets.GMAIL_PASSWORD }}
           subject: "New release detected: v1.2.0"
           body: "A new release has been created on GitHub. Please check the repository for more details."
-          to: "delyce@enaccess.com"
+          to: "delyce@enaccess.org"
           from: "delyce35@gmail.com"
