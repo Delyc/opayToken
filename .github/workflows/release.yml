@@ -16,11 +16,11 @@ jobs:
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.example.com
+          server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "New release detected: ${{ github.event.release.tag_name }}"
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          subject: "New release detected: v1.2.0"
           body: "A new release has been created on GitHub. Please check the repository for more details."
           to: "delyce@enaccess.com"
           from: "delyce35@gmail.com"
