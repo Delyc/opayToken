@@ -1,0 +1,29 @@
+name: Release Notification
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  send_notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for new release
+        id: check_release
+        run: |
+          # Add any necessary script or command to check for new releases
+          latest_release=$(git describe --tags --abbrev=0)
+          echo "::set-output name=release::$latest_release"
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.example.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: New release available
+          body: there is a new release available ${{ steps.check_release.outputs.release }}
+          to: delyce@enaccess.org
