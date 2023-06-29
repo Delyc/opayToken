@@ -16,7 +16,7 @@ jobs:
         run: find include/ src/ \( -name '*.[ch]pp' -o -name '*.h' \) | xargs clang-format --verbose --style=file -n --Werror
 
   linting-and-compile-examples:
-    runs-on: ubuntu-laexamples
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
