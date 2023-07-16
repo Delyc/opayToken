@@ -5,7 +5,7 @@
 #include <sys/types.h>
 #endif
 
-#include "../include/extended/opaygo_core.h"
+#include "../../include/extended/opaygo_core.h"
 #include "device_parameters.h"
 #include "unix_device/device_functions.h"
 #include <math.h>

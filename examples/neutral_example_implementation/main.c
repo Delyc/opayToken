@@ -1,5 +1,5 @@
-#include "../include/opaygo_decoder.h"
-#include "../include/opaygo_value_utils.h"
+#include "../../include/opaygo_decoder.h"
+#include "../../include/opaygo_value_utils.h"
 #include "device_parameters.h"
 #include "device_payg_logic.h"
 #include "unix_device/device_functions.h"
