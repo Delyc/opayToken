@@ -1,7 +1,7 @@
 CC = gcc
 LIBS = -lm
 
-SRC_DIR   := . unix_device opaygo_decoder
+SRC_DIR   := . unix_device ../../include ../../src
 
 SRC       := $(foreach sdir,$(SRC_DIR),$(wildcard $(sdir)/*.c))
 OBJ       := $(patsubst src/%.c,build/%.o,$(SRC))
